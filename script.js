@@ -1,6 +1,6 @@
 function compute()
 {
-    var p = document.getElementById("principal").value;
+let p = document.getElementById("principal").value;
 
     if(p == "" || p <= 0)
     {
@@ -8,27 +8,14 @@ function compute()
         document.getElementById("principal").focus();
         return;
     }
-    var r = document.getElementById("rate").value;
-    var y = document.getElementById("years").value;
-    var y1 = now.getFullYear();
-    var final = calculo(p,r,y,y1);
-    document.getElementById("result").innerHTML = final;
-    }
-
+let r = document.getElementById("rate").value;
+let y = document.getElementById("years").value;
+let y1 = now.getFullYear();
+let atual = y1+y;
+let final = (p*y*r) /100;
+document.getElementById("result").innerHTML = "If you deposit " + p;
+document.getElementById("result").innerHTML = "at an interest rate of " + r;
+document.getElementById("result").innerHTML = "you will receive an amount of " + final;      
+document.getElementById("result").innerHTML = "in the year " + atual;   
 }
-
-function calculo(p,r,y,y1)   {
-   var lucro = p*y*r /100;
-   var atual = y1+y;
-   var resultado = "If you deposit "+ p 
-            "at an interest rate of " + y
-            "you will receive an amount of " + lucro
-            "in the year " + atual;
-return resultado
-    
-}
-        
-function updateTextInput(val) {
-    document.getElementById('textInput').value=val; 
-  }
         
